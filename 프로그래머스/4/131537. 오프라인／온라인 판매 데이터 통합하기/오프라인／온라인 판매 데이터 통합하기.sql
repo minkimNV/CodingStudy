@@ -1,4 +1,29 @@
--- 코드를 입력하세요
+# 1. ONLIE_SALE 데이터 확인
+# SELECT SALES_DATE, PRODUCT_ID, USER_ID, SALES_AMOUNT
+#     FROM ONLINE_SALE;
+
+# 2. 날짜 데이터 포맷 + 2022년 03월 이후 판매 데이터만 출력
+# SELECT DATE_FORMAT(SALES_DATE, '%Y-%m-%d') AS SALES_DATE
+#     , PRODUCT_ID
+#     , USER_ID
+#     , SALES_AMOUNT
+#     FROM ONLINE_SALE
+#     WHERE SALES_DATE LIKE '2022-03%'
+#     ORDER BY SALES_DATE ASC, PRODUCT_ID ASC, USER_ID ASC;
+
+
+# 3. OFFLINE_SALE 같은 과정 + USER_ID IS NULL
+# SELECT DATE_FORMAT(SALES_DATE, "%Y-%m-%d") AS SALES_DATE
+#         , PRODUCT_ID
+#         , NULL
+#         , SALES_AMOUNT
+#         FROM OFFLINE_SALE
+#         WHERE SALES_DATE LIKE '2022-03%'
+#         ORDER BY SALES_DATE ASC, PRODUCT_ID ASC, USER_ID ASC;
+#         # 출력되는게 없는데 왜냐묜 2022-03 이후 판매 데이터 없음
+#         # 3번 부분만 코드를 돌리려면 NULL 과 ORDER BY USER_ID ASC 부분 제외하고 돌려보기
+
+# 4. 결론
 SELECT DATE_FORMAT(SALES_DATE, '%Y-%m-%d') AS SALES_DATE
         , PRODUCT_ID
         , USER_ID
@@ -14,6 +39,5 @@ SELECT DATE_FORMAT(SALES_DATE, "%Y-%m-%d") AS SALES_DATE
         , SALES_AMOUNT
         FROM OFFLINE_SALE
         WHERE SALES_DATE LIKE '2022-03%'
-        ORDER BY SALES_DATE ASC, PRODUCT_ID ASC, USER_ID ASC;
-
-        # ORDER BY 1 ASC, 2 ASC, 3 ASC;
+        ORDER BY 1 ASC, 2 ASC, 3 ASC;
+        # ORDER BY 이렇게 컬럼 순서로 해도 되지롱

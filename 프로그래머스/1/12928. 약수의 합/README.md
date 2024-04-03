@@ -12,11 +12,7 @@
 
 ### 채점결과
 
-정확성: 100.0<br/>합계: 100.0 / 100.0
-
-### 제출 일자
-
-2024년 04월 03일 21:41:07
+Empty
 
 ### 문제 설명
 
@@ -54,4 +50,4 @@
 5의 약수는 1, 5입니다. 이를 모두 더하면 6입니다.</p>
 
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges

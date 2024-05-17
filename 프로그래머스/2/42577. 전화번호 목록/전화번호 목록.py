@@ -1,48 +1,20 @@
-''''''
 '''
-1. 리스트 안 전화번호는 문자열이다. - 문자열 정렬
-2. 원소 앞뒤로 비교한다.
-
-def solution(phone_book):
-    phone_book.sort()
-
-    for idx in range(len(phone_book)-1):            # len()-1 : [i]랑 [i+1] 비교할건데 마지막 인덱스에는 이후 원소가 없어서
-        if phone_book[idx] in phone_book[idx+1]:
-            return False
-
-    return True
-
-print(solution(["119", "97674223", "1195524421"]))
-
-13번 케이스 실패."119" "2119"
+1. 한 번호가 다른 번호의 접두어인지 확인하기.
+2. 접두어?
+    구조대 119
+    박준영 97 674 223
+    지영석 11 9552 4421
+   구조대 번호는 지영석 번호의 접두어다 : False 출력
+   접두어가 아니면 True
+3. 전화번호 길이 1 - 20
+4. 중복 전화번호 없고 전화번호 길이는 최대 20이고, 문자열로 주어진다.
 '''
 
-
 def solution(phone_book):
     phone_book.sort()
 
-    for idx in range(len(phone_book)-1):            # len()-1 : [i]랑 [i+1] 비교할건데 마지막 인덱스에는 이후 원소가 없어서
-        length = len(phone_book[idx])
-        if phone_book[idx] in phone_book[idx+1][:length]:
+    for i in range(len(phone_book)):
+        length = len(phone_book[i-1])
+        if phone_book[i-1] == phone_book[i][:length]:
             return False
-
     return True
-
-
-def solution(phone_book):
-    phone_book.sort()
-    hashbrown = {}
-    for numbers in phone_book:
-        hashbrown[numbers] = 1
-
-    for key in hashbrown:
-        firnum = ""
-        for num in key:
-            firnum += num
-            if firnum in hashbrown and firnum != key:
-                return False
-    return True
-
-# print(solution(["119", "97674223", "1195524421"]))
-
-
